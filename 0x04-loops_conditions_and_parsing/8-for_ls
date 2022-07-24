@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 # Print the content of the current folder
 
-LIST="$(ls)"
+LIST=$(ls)
 for i in $LIST;
 do
-	echo "$i"
+	echo "$i" | cut -d '-' -f 2
 done
