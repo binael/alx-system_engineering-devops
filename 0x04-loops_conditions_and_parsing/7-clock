@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# Prints a 12hr clock
+HOUR=0
+while [ $HOUR != 13 ];
+do
+	echo "Hour: $HOUR"
+	MINUTE=1
+
+	while [ $MINUTE != 60 ];
+	do
+		echo "$MINUTE"
+		((MINUTE=MINUTE+1))
+	done
+
+	((HOUR=HOUR+1))
+done
