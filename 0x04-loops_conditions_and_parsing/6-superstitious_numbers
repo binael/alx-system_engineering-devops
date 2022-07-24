@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# Print output using while loop
+n=1
+while [ $n != 21 ];
+do
+	if [ $n == 5 ];
+	then
+		echo "bad luck from China"
+	elif [ $n == 10 ];
+	then
+		echo "bad luck from Japan"
+	elif [ $n == 18 ];
+	then
+		echo "bad luck from Italy"
+	fi
+	echo "$n"
+	((n=n+1))
+done

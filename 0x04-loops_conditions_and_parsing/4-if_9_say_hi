@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# Print "Best school" add Hi at the 9th iteration
+n=1
+while true;
+do
+	if [ $n == 10 ]
+	then
+		echo "Hi"
+	elif [ $n == 11 ]
+	then
+		break
+	fi
+	echo "Best School"
+	((n=n+1))
+done
