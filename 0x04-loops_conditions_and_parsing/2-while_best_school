@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# Using while loop to print "Best School" 10X
+n=1
+while true;
+do
+	if [ $n -eq 11 ];
+	then
+		break;
+	fi
+	echo "Best School"
+	((n=n+1))
+done

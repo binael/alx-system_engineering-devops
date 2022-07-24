@@ -3,7 +3,8 @@
 i=1
 for (( ; ; ));
 do
-	if [ $i -eq 11 ];then
+	if [ $i -eq 11 ];
+	then
 		break
 	fi
 	echo "Best School"
