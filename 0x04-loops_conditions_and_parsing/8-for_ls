@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# Print the content of the current folder
+
+LIST="$(ls)"
+for i in "$LIST";
+do
+	echo "$i"
+done
