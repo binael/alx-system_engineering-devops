@@ -1,18 +1,20 @@
 #!/usr/bin/env bash
 # Print output using while loop
 n=1
+china=5
+japan=10
+italy=18
 while [ $n != 21 ];
 do
-	if [ $n == 5 ];
-	then
-		echo "bad luck from China"
-	elif [ $n == 10 ];
-	then
-		echo "bad luck from Japan"
-	elif [ $n == 18 ];
-	then
-		echo "bad luck from Italy"
-	fi
+	case $n in
+		$china)
+			echo "bad luck from China";;
+		$japan)
+			echo "bad luck from Japan";;
+		$italy)
+			echo "bad luck from Italy";;
+	esac
+
 	echo "$n"
 	((n=n+1))
 done
