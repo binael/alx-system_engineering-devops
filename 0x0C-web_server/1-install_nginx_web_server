@@ -12,12 +12,12 @@ server {
 	listen [::]80 default_server;
 
 	root /var/www/html;
-	index index.html index.htm index.nginx-debian.html;
+	index.nginx-debian.html;
 
     server_name _;
 
     location / {
-        return 200 "$uri";
+        return 200 "Hello World!";
 	}
 }
 EOF
