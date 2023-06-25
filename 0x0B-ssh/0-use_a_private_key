@@ -1,3 +1,2 @@
 #!/usr/bin/bash
-
-ssh -i ~/.ssh/school ubuntu@52.86.109.82
+ssh -i ~/.ssh/school -o PreferredAuthentications=publickey ubuntu@52.86.109.82
