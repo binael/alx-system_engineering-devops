@@ -10,8 +10,8 @@ file_line { 'password_change':
 }
 
 file_line { 'identify_file':
-  ensure   => present,
-  path     => '/etc/ssh/ssh_config',
-  line     => '    IdentifyFile ~/.ssh/school',
-  replace  => true,
+  ensure  => present,
+  path    => '/etc/ssh/ssh_config',
+  line    => '    IdentifyFile ~/.ssh/school',
+  replace => true,
 }
