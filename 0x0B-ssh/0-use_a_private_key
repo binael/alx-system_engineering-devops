@@ -1,3 +1,4 @@
-#!/usr/bin/bash
-chmod a+x ~/.ssh/school
+#!/usr/bin/env bash
+# Connects to server 52.86.109.82 with private key
+
 ssh -i ~/.ssh/school ubuntu@52.86.109.82
