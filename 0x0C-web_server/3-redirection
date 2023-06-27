@@ -11,7 +11,7 @@ sed -i '/server_name _/c\
 \tserver_name _;\
 \n\tlocation /redirect_me {\
 \t\t#Redirects to youtube page\
-\t\treturn 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;\
+\t\treturn 301 https://www.youtube.com/ permanent;\
 \t}\
 ' /etc/nginx/sites-available/default
 
