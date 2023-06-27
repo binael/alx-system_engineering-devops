@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# Script that installs nginx and configures it
+
+apt-get -y update
+apt-get -y install nginx
+echo "Hello World!" > /var/www/html/index.nginx-debian.html
+sed -i 's/8080/80/g' /etc/nginx/sites-enabled/default
+service nginx restart
