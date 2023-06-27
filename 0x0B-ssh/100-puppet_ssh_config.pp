@@ -12,6 +12,6 @@ file_line { 'password_change':
 file_line { 'identify_file':
   ensure  => present,
   path    => '/etc/ssh/ssh_config',
-  line    => '    IdentifyFile ~/.ssh/school',
+  line    => '    IdentityFile ~/.ssh/school',
   replace => true,
 }
