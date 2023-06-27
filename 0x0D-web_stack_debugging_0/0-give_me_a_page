@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Script that fixes fault on an Apache
+
+echo "ServerName localhost" >> /etc/apache2.conf
+service apache2 start
