@@ -4,7 +4,7 @@
 apt-get -y update
 apt-get -y install nginx
 
-sed -i '/server_name _/c\
+sudo sed -i '/server_name _/c\
 \tserver_name _;\
 \n\tlocation /redirect_me {\
 \t\t#Redirects to youtube page\
@@ -12,4 +12,4 @@ sed -i '/server_name _/c\
 \t}\
 ' /etc/nginx/sites-enabled/default
 
-service nginx restart
+sudo service nginx restart
