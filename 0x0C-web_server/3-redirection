@@ -4,12 +4,15 @@
 apt-get -y update
 apt-get -y install nginx
 
-sudo sed -i '/server_name _/c\
+echo "Hello World!" > /var/www/html/index.nginx-debian.html
+sed -i 's/8080/80/g' /etc/nginx/sites-enabled/default
+
+sed -i '/server_name _/c\
 \tserver_name _;\
 \n\tlocation /redirect_me {\
 \t\t#Redirects to youtube page\
 \t\treturn 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;\
 \t}\
-' /etc/nginx/sites-enabled/default
+' /etc/nginx/sites-available/default
 
-sudo service nginx restart
+service nginx restart
