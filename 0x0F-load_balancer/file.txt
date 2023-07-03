@@ -1,12 +1,1 @@
-ator\natori\natori
-
-frontend haproxy-main
-	bind *:80
-	option forwardfor
-	stats uri /haproxy?stats
-	default_backend nginx_webservers
-
-backend nginx_webservers
-	balance roundrobin
-	server 8248-web-02 54.175.133.2:80 check
-	server 8248-web-01 52.86.109.82:80 check
+DAEL
