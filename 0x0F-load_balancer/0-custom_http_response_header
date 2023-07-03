@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+# Configure your Nginx server and sets header values
+
+name=$(hostname)
+
+apt-get -y update
+apt-get -y install nginx
+
+echo "Hello World!" > /var/www/html/index.nginx-debian.html
+sed -i 's/8080/80/g' /etc/nginx/sites-available/default
+
+sed -i '/listen 80 default_server;/a  \\n\trewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;' /etc/nginx/sites-available/default
+
+echo "Ceci n'est pas une page" | sudo tee /var/www/html/custom_404.html > /dev/null
+
+sed -i '/root \/var\/www\/html;/a \\terror_page 404 /custom_404.html;' /etc/nginx/sites-available/default
+
+sed -i "/location \/ {/a \\\t\tadd_header X-Served-By $name;" /etc/nginx/sites-available/default
+
+service nginx restart
