@@ -3,14 +3,14 @@
 
 file="/etc/haproxy/haproxy.cfg"
 
-sudo apt-get -y update
-sudo apt-get install -y --no-install-recommends software-properties-common
-sudo add-apt-repository -y ppa:vbernat/haproxy-2.8
-sudo apt-get -y install haproxy=2.8.\*
+apt-get -y update
+apt-get install -y --no-install-recommends software-properties-common
+add-apt-repository -y ppa:vbernat/haproxy-2.8
+apt-get -y install haproxy=2.8.\*
 
-sudo cp /etc/haproxy/haproxy.cfg /etc/haproxy/haproxy.cfg.bk
+cp /etc/haproxy/haproxy.cfg /etc/haproxy/haproxy.cfg.bk
 
-sudo tee -a $file << EOF > /dev/null
+tee -a $file << EOF > /dev/null
 
 frontend haproxy-main
 	bind *:80
@@ -23,3 +23,5 @@ backend nginx_webservers
 	server 8248-web-02 54.175.133.2:80 check
 	server 8248-web-01 52.86.109.82:80 check
 EOF
+
+service haproxy start
