@@ -6,7 +6,7 @@ file="/etc/haproxy/haproxy.cfg"
 apt-get -y update
 apt-get install -y --no-install-recommends software-properties-common
 add-apt-repository -y ppa:vbernat/haproxy-2.8
-apt-get -y install haproxy=2.8.\*
+apt-get -y install haproxy
 
 cp /etc/haproxy/haproxy.cfg /etc/haproxy/haproxy.cfg.bk
 
