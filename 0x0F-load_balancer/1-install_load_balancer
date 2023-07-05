@@ -10,6 +10,8 @@ apt-get -y install haproxy=2.8.\*
 
 cp /etc/haproxy/haproxy.cfg /etc/haproxy/haproxy.cfg.bk
 
+echo "ENABLED=1" | tee -a /etc/default/haproxy > /dev/null
+
 tee -a $file << EOF > /dev/null
 
 frontend haproxy-main
