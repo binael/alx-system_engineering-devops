@@ -21,9 +21,6 @@ file { '/etc/nginx/sites-available/default':
 
         root /var/www/html;
 
-		error_page 404 /custom_404.html;
-
-
         index index.html index.htm index.nginx-debian.html;
 
         server_name _;
