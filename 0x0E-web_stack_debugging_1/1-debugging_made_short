@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# Configures nginx to port 80 for only ipv4 addresses
+apt-get -y install lsof
+sed -i 's/listen 8080/listen 80/g' /etc/nginx/sites-enabled/default
+sed -i 's/server_name localhost/server_name _/' /etc/nginx/sites-enabled/default
+kill "$(lsof -i:8080 -t)"
+service nginx restart
