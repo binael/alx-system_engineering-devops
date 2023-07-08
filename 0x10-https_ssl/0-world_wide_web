@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+# Script that outputs the subdomain, record type and destination
+
+func_A () {
+	dig "$1" | grep -A1 "ANSWER SECTION" | awk "/$1/ {print \$4}"
+}
+
+func_IP () {
+	dig "$1" | grep -A1 "ANSWER SECTION" | awk "/$1/ {print \$5}"
+}
+
+if [ $# -eq 1 ]; then
+	my_array=("www" "lb-01" "web-01" "web-02")
+	for sub in "${my_array[@]}"
+	do
+		url="$sub.$1"
+		echo "The subdomain $sub is a $(func_A "$url") record and points to $(func_IP "$url")"
+	done
+elif [ $# -gt 1 ]; then
+	url="$2.$1"
+	echo "The subdomain $2 is a $(func_A "$url") record and points to $(func_IP "$url")"
+fi
