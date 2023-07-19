@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# Get the backup of all databases in mysql and compress
+backup="backup.sql"
+today=$(date +%d-%m-%Y)
+
+mysqldump -u root -p"$1" --all-databases > "$backup" 2> /dev/null
+sudo tar -czvf "$today.tar.gz" "$backup" > /dev/null
