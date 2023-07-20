@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # script that changes nginx user from root to nginx and listens to port 8080
 sed -i '/user .*/ s/.*/user nginx;/' /etc/nginx/nginx.conf
-sed -i 's/^80/8080/g' /etc/nginx/sites-available/default
+sed -i 's/^listen .*;$/listen 8080;/' /etc/nginx/nginx.conf
 service nginx stop
 service nginx start
