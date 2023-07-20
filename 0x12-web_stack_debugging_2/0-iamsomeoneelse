@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
 # A script runs the whoami command under the user passed as an argument
 
-if [ $# -gt 0 ]; then
-	echo "$1"
-else
-	echo $(whoami)
+if id "$1" &> /dev/null; then
+	su "$1" -c "whoami"
 fi
