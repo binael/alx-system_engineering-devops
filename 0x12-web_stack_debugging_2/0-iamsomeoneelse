@@ -4,6 +4,9 @@
 current_user=$(whoami)
 
 if id "$1" &> /dev/null; then
-	su "$1" -c "whoami"
+	if [ "$current_user" = "$1" ]; then
+		echo $current_user
+	else
+		echo $1
+	fi
 fi
-su -c "$current_user"
