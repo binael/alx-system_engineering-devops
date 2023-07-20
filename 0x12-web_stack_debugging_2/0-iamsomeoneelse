@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# A script runs the whoami command under the user passed as an argument
+
+if [ $# -gt 0 ]; then
+	echo "$1"
+else
+	echo $(whoami)
+fi
