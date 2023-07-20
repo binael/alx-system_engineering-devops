@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 # A script runs the whoami command under the user passed as an argument
 
+current_user=$(whoami)
+
 if id "$1" &> /dev/null; then
 	su "$1" -c "whoami"
 fi
+su -c "$current_user"
