@@ -5,8 +5,8 @@ current_user=$(whoami)
 
 if id "$1" &> /dev/null; then
 	if [ "$current_user" = "$1" ]; then
-		echo $current_user
+		echo "$current_user"
 	else
-		echo $1
+		echo "$1"
 	fi
 fi
