@@ -26,9 +26,7 @@ if __name__ == '__main__':
     for i in range(number_of_tasks):
         if todo_list[i].get('completed'):
             completed_task += 1
-            tasks += '\t ' + todo_list[i].get('title')
-            if (i < number_of_tasks - 1):
-                tasks += '\n'
+            tasks += '\t ' + todo_list[i].get('title') + '\n'
 
     text = 'Employee {} is done with tasks({}/{}):'
     print(text.format(name, completed_task, number_of_tasks))
