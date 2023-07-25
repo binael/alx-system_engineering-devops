@@ -30,6 +30,6 @@ if __name__ == '__main__':
             if (i < number_of_tasks - 1):
                 tasks += '\n'
 
-    text = 'Employee {} is done with tasks({}/{})'
+    text = 'Employee {} is done with tasks({}/{}):'
     print(text.format(name, completed_task, number_of_tasks))
     print(tasks)
