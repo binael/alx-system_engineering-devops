@@ -30,4 +30,4 @@ if __name__ == '__main__':
 
     text = 'Employee {} is done with tasks({}/{}):'
     print(text.format(name, completed_task, number_of_tasks))
-    print(tasks)
+    print(tasks, end='')
